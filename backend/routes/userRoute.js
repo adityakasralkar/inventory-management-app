@@ -1,8 +1,8 @@
 import express from 'express';
+import {registerUser} from '../controllers/userController.js';
 
 const router = express.Router();
 
-const registerUser = () => {};
 router.post("/register" ,registerUser);
 
 
