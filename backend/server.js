@@ -8,19 +8,19 @@ import mongoose from 'mongoose';
 dotenv.config();
 
 const app = express();
+
+//Middleware
 app.use(express.json());
-
-
-const PORT = process.env.PORT || 2000;
-
-//Basic Server Running
+app.use(express.urlencoded({extended : false}));
+app.use(bodyParser.json())
+;
+//Routes
 app.get('/' , (req , res ) => {
-    res.json({
-        message: "Server is Running",
-    });
+  res.send("HomePage");
 });
 
 
+const PORT = process.env.PORT || 2000;
 //DATABASE CONNECTION WITH SERVER STARTING--⬇️
     // Connect to DB and Start Server
 
